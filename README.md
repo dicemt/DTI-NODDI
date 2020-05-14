@@ -9,9 +9,9 @@ Implementation of diffusion tensor image based neurite orientation dispersion an
 - Python 3.7 or higher
 
 ## Package dependencies
-- numpy
-- scipy
-- nibabel
+- numpy (>=1.16.5)
+- scipy (>=1.3.1)
+- nibabel (>=3.1.0)
 
 
 # Usage

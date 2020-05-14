@@ -16,7 +16,6 @@ import os.path
 import re
 import numpy as np
 import nibabel as nib
-
 from dti_noddi import correct_md, dti_fit, md2icvf, famd2tau, tau2odi, kappa2tau, dawson, odi2kappa, diff_parameters, isnumber
 
 def dti_noddi_eigenvalue(bval, L1, L2, L3, MK = 1, mask = None):
@@ -104,7 +103,10 @@ def dti_noddi_famd(bval, FA, MD, mask = None):
 
 def load_nifti(mrifile):
     img = nib.load(mrifile)
-    imgdata = img.get_fdata()
+    try:
+        imgdata = img.get_fdata()
+    except:
+        imgdata = img.get_data()
     header = img.header.copy()
     return(imgdata,header,img.affine)
 
@@ -116,7 +118,10 @@ def save_nifti(imgdata, header, affine, mask=None, nam=None, pth=None):
         print('Not found mask image. Using implicit mask instead.')
     elif os.path.isfile(mask):
         mask = nib.load(mask)
-        maskdata = mask.get_fdata()
+        try:
+            maskdata = mask.get_fdata()
+        except:
+            maskdata = mask.get_data()
         print('Applying mask to %s' % nam)
         data = applymask(imgdata,maskdata)
     else:
@@ -128,5 +133,3 @@ def save_nifti(imgdata, header, affine, mask=None, nam=None, pth=None):
     # Save nifti
     newImg = nib.Nifti1Image(data.astype(np.float64), affine, header=header)
     nib.save(newImg, pth + "DTINODDI_" + nam + '.nii.gz')
-
-    
