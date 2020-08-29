@@ -18,8 +18,8 @@ Implementation of diffusion tensor image based neurite orientation dispersion an
 
 ## Basic usage
 ```bash
-dti_noddi_fit.py <b-value> <L1 file> <L2 file> <L3 file> [options]
-dti_noddi_fit.py <b-value> <FA file> <MD file> [options]
+dti_noddi_fit.py <b-value> --L1 <L1 file> --L2 <L2 file> --L3 <L3 file> [options]
+dti_noddi_fit.py <b-value> --FA <FA file> --MD <MD file> [options]
 ```
 
 ## Output
