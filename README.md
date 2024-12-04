@@ -59,6 +59,9 @@ $ python dti_noddi_fit.py 2000 --L1 L1.nii.gz --L2 L2.nii.gz --L3 L3.nii.gz --ma
 $ python dti_noddi_fit.py 2000 --L1 L1.nii.gz --L2 L2.nii.gz --L3 L3.nii.gz --MK MK.nii.gz
 ```
 
+# Reference
+- Edwards LJ, Pine KJ, Ellerbrock I, Weiskopf N, Mohammadi S (2017) [NODDI-DTI: Estimating neurite orientation and dispersion parameters from a diffusion tensor in healthy white matter.](https://pubmed.ncbi.nlm.nih.gov/29326546/) Front Neurosci 11:720.
+
 # License
 The DTI-NODDI is free but copyright software, distributed under the terms of the [GNU Affero General Public License v3.0](https://choosealicense.com/licenses/agpl-3.0/).
 
